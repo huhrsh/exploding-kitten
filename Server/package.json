@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js --port:5000",
-    "prod":"NODE_ENV=production node index.js",
+    "prod": "NODE_ENV=production node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Harsh Jain",
@@ -17,6 +17,7 @@
     "express": "^4.19.2",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
+    "mongodb": "^6.5.0",
     "mongoose": "^8.2.4",
     "path": "^0.12.7"
   }
