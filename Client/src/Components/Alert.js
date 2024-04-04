@@ -45,14 +45,14 @@ function Alert(props) {
             {alert === "won" &&
                 <div className="flex flex-col justify-center items-center gap-12 h-full" >
                     <p className="text-5xl" ><span className="text-orange-500" >Congratulations, </span>you won.</p>
-                    <p className="text-3xl" >Your current score is: <span className="text-orange-500">{updatedUser.won} wins </span> out of {updatedUser.games} games</p>
+                    {/* <p className="text-3xl" >Your current score is: <span className="text-orange-500">{user.won} wins </span> out of {user.games} games</p> */}
                     <button className="bg-orange-500 rounded py-3 px-5 text-2xl" onClick={() => setAlert(null)} >Continue</button>
                 </div>
             }
             {alert === "lost" &&
                 <div className="flex flex-col justify-center items-center gap-12 h-full" >
                     <p className="text-5xl" ><span className="text-orange-500" >Ooops, </span>you lost.</p>
-                    <p className="text-3xl" >Your current score is: <span className="text-orange-500">{updatedUser.won} wins </span> out of {updatedUser.games} games</p>
+                    {/* <p className="text-3xl" >Your current score is: <span className="text-orange-500">{user.won} wins </span> out of {user.games} games</p> */}
                     <button className="bg-orange-500 rounded py-3 px-5 text-2xl" onClick={() => setAlert(null)} >Continue</button>
                 </div>
             }
