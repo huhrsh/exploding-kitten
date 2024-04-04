@@ -1,0 +1,22 @@
+{
+  "name": "exploding-kitten",
+  "version": "1.0.0",
+  "description": "server for exploding-kitten game",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --port:5000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harsh Jain",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.12.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "mongoose": "^8.2.4",
+    "path": "^0.12.7"
+  }
+}
