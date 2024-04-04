@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { PuffLoader } from 'react-spinners'
 
 function User({ setPhase }) {
-    const apiUrl = process.env.NODE_ENV === 'development' ? "http://localhost:5000" : ""
+    const apiUrl = process.env.NODE_ENV === 'development' ? "http://localhost:5000" : "https://exploding-kitten-yc3s.onrender.com"
     const dispatch = useDispatch()
     const [inp1, setInp1] = useState("")
     const [name, setName] = useState("")

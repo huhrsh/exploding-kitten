@@ -4,9 +4,9 @@ import { clearUser } from '../Redux';
 import { toast } from "react-toastify";
 
 function Header({ phase,user,setPhase,setLeaderboard }) {
-    const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://exploding-kitten.onrender.com'
+    const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://exploding-kitten-yc3s.onrender.com'
     const dispatch = useDispatch()
-    
+
     // function to handle sign out 
     async function handleSignOut() {
         const response = await fetch(apiUrl + '/update-user', {

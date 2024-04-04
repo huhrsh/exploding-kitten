@@ -6,7 +6,7 @@ import 'animate.css'
 import { toast } from 'react-toastify';
 
 function Game({ user, setAlert, alert }) {
-  const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : ''
+  const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://exploding-kitten-yc3s.onrender.com'
   const [clickable, setClickable] = useState(true)
   const dispatch = useDispatch()
   // state to check if shuffle is clicked 

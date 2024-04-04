@@ -4,7 +4,7 @@ import { toast } from "react-toastify"
 import { useEffect } from "react"
 
 function Alert(props) {
-    const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : ''
+    const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://exploding-kitten-yc3s.onrender.com'
     const { setAlert, alert } = props
     const dispatch = useDispatch()
     const user = useSelector(state => state.user.user)

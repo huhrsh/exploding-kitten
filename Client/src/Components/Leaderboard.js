@@ -5,7 +5,7 @@ import { PuffLoader } from "react-spinners"
 
 function Leaderboard({setLeaderboard }) {
     const [loading, setLoading] = useState(false)
-    const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : ''
+    const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://exploding-kitten-yc3s.onrender.com'
     const [leaderboardData, setLeaderboardData] = useState()
     
     // function to fetch data from db 
