@@ -19,6 +19,7 @@ function Alert(props) {
 
 
     async function updateUser() {
+        dispatch(setUser(updatedUser))
         const response = await fetch(apiUrl + '/update-user', {
             method: 'POST',
             headers: {
@@ -27,7 +28,6 @@ function Alert(props) {
             body: JSON.stringify(updatedUser)
         })
         if (response.ok) {
-            dispatch(setUser(updatedUser))
         }
         else {
             toast.error("Error in updating database, cannot logout.")

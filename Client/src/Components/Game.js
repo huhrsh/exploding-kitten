@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../Redux';
 import 'animate.css'
+import { toast } from 'react-toastify';
 
 function Game({ user, setAlert, alert }) {
   const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : ''
@@ -38,6 +39,7 @@ function Game({ user, setAlert, alert }) {
     setHasDefuse(0)
     setShuffleCard(false)
     setInHand([])
+    dispatch(setUser({ ...user, deck: shuffledArray, inHand: [] }));
     const response = await fetch(apiUrl + '/update-user', {
       method: "POST",
       headers: {
@@ -46,7 +48,7 @@ function Game({ user, setAlert, alert }) {
       body: JSON.stringify({ ...user, deck: shuffledArray, inHand: [] })
     })
     if (response.ok) {
-      dispatch(setUser({ ...user, deck: shuffledArray, inHand: [] }));
+      // console.log("Working fine")
     }
   }
 
@@ -102,6 +104,7 @@ function Game({ user, setAlert, alert }) {
       if (type === 'Shuffle') {
         setShuffleCard(true)
       }
+      dispatch(setUser({ ...user, deck: temp1, inHand: temp2 }))
       setDeck(temp1)
       setInHand(temp2)
       setTimeout(async () => {
@@ -133,8 +136,8 @@ function Game({ user, setAlert, alert }) {
             },
             body: JSON.stringify({ ...user, deck: temp1, inHand: temp2 })
           })
-          if (response.ok) {
-            dispatch(setUser({ ...user, deck: temp1, inHand: temp2 }))
+          if(!response.ok){
+            toast.error("Error in updating in database.")
           }
         }
         setClickable(true)
