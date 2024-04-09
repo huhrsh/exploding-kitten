@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 
 app.use(cors({
+    // origin: "http://localhost:3000",
     origin: "https://exploding-kitten-rho.vercel.app",
-    // origin: "https://print-easy.vercel.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
 }));

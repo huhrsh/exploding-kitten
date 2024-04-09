@@ -32,7 +32,8 @@ function Leaderboard({setLeaderboard }) {
     }, [])
 
     return (<>
-        {loading ? <PuffLoader color="#f97316" className="absolute top-[45vh] left-[50vw] -translate-x-[50%] -translate-y-[50%] " /> : <section className="animate__animated animate__fadeInUp w-screen h-screen p-12 pt-20 z-10 fixed top-0 left-0 bg-[#000000dd]" >
+        {loading ? <PuffLoader color="#f97316" className="absolute top-[45vh] left-[50vw] -translate-x-[50%] -translate-y-[50%] " /> : 
+        <section className=" overflow-y-auto animate__animated animate__fadeInUp w-screen h-screen p-12 pt-20 z-10 fixed top-0 left-0 bg-[#000000dd]" >
             <img onClick={() => { setLeaderboard(false) }} className="absolute top-8 rounded-full p-2 cursor-pointer right-8 h-12 bg-orange-500" src={close} alt="close" />
             <ul className="flex flex-col" >
                 <li className="flex text-orange-500 justify-between items-center w-full px-3 py-2 text-2xl" key={'head'}>
