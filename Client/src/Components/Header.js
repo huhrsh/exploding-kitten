@@ -9,6 +9,7 @@ function Header({ phase,user,setPhase,setLeaderboard }) {
 
     // function to handle sign out 
     async function handleSignOut() {
+        dispatch(clearUser());
         const response = await fetch(apiUrl + '/update-user', {
             method: 'POST',
             headers: {
@@ -17,7 +18,6 @@ function Header({ phase,user,setPhase,setLeaderboard }) {
             body: JSON.stringify(user)
         })
         if (response.ok) {
-            dispatch(clearUser());
             setPhase("user")
         }
         else {
