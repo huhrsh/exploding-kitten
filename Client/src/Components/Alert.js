@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { setUser } from "../Redux"
 import { toast } from "react-toastify"
 import { useEffect } from "react"
+import { current } from "@reduxjs/toolkit"
 
 function Alert(props) {
     const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://exploding-kitten-yc3s.onrender.com'
@@ -11,10 +12,10 @@ function Alert(props) {
 
     let updatedUser
     if (alert === 'won') {
-        updatedUser = { ...user, won: user.won + 1, games: user.games + 1, deck: [], inHand: [] }
+        updatedUser = { ...user, won: user.won + 1, current: user.current + 1, games: user.games + 1, deck: [], inHand: [] }
     }
     else if (alert === 'lost') {
-        updatedUser = { ...user, games: user.games + 1, deck: [], inHand: [] }
+        updatedUser = { ...user, games: user.games + 1, current:0, deck: [], inHand: [] }
     }
 
 

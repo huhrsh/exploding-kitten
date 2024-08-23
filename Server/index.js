@@ -12,7 +12,7 @@ app.use(bodyParser.json({ extended: true }));
 
 app.use(cors({
     // origin: "http://localhost:3000",
-    origin: "https://exploding-kitten-rho.vercel.app",
+    origin: ["https://exploding-kitten-rho.vercel.app", "http://localhost:3000"],
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
 }));

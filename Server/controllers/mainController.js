@@ -1,5 +1,5 @@
 const User = require('../models/user')
-const mongoose=require('mongoose')
+const mongoose = require('mongoose')
 
 module.exports.createUser = async (req, res) => {
     try {
@@ -35,7 +35,7 @@ module.exports.loginUser = async (req, res) => {
 
 module.exports.getLeaderboard = async (req, res) => {
     try {
-        const userData = await User.find({}).sort({won:-1});
+        const userData = await User.find({}).sort({ highScore: -1 , won: -1 });
         res.json(userData);
     } catch (error) {
         console.error(error);
@@ -44,13 +44,13 @@ module.exports.getLeaderboard = async (req, res) => {
 };
 
 
-module.exports.updateUser=async(req,res)=>{
-    try{
-        const user=req.body
-        const newUser=await User.findByIdAndUpdate(user._id,{games:user.games, won:user.won, deck:user.deck, inHand:user.inHand},{ new: true } )
-        console.log(newUser)
-        res.status(200).json({msg:"Updated Successfully"})
-    }catch(error){
+module.exports.updateUser = async (req, res) => {
+    try {
+        const user = req.body
+        const newUser = await User.findByIdAndUpdate(user._id, { games: user.games, highScore: Math.max(user.highScore, user.current), current:user.current, won: user.won, deck: user.deck, inHand: user.inHand }, { new: true })
+        // console.log(newUser)
+        res.status(200).json({ msg: "Updated Successfully" })
+    } catch (error) {
         console.error(error);
         res.status(500).json({ msg: "Internal Server Error" });
     }
