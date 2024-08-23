@@ -47,7 +47,7 @@ function Leaderboard({setLeaderboard }) {
                 </li>
                 {leaderboardData && leaderboardData.map((item, index) => (
                     <li className={`flex justify-between items-center w-full px-3 py-2 text-xl`} key={index}>
-                        <p className="w-2/12 p-2">{index}</p>
+                        <p className="w-2/12 p-2">{index+1}</p>
                         {/* <p className="w-1/4 p-2 ">{item.username}</p> */}
                         <p className="w-2/4 p-2 ">{item.name}</p>
                         <p className="w-1/6 p-2 text-center">{item.games}</p>
