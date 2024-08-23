@@ -47,8 +47,8 @@ module.exports.getLeaderboard = async (req, res) => {
 module.exports.updateUser = async (req, res) => {
     try {
         const user = req.body
-        const newHighScore = user.current > user.highScore ? user.current : user.highScore;
-        const newUser = await User.findByIdAndUpdate(user._id, { games: user.games, highScore: newHighScore, current:user.current, won: user.won, deck: user.deck, inHand: user.inHand }, { new: true })
+        // const newHighScore = user.current > user.highScore ? user.current : user.highScore;
+        const newUser = await User.findByIdAndUpdate(user._id, { games: user.games, highScore: user.highScore, current:user.current, won: user.won, deck: user.deck, inHand: user.inHand }, { new: true })
         // console.log(newUser)
         res.status(200).json({ msg: "Updated Successfully" })
     } catch (error) {

@@ -15,7 +15,7 @@ function Alert(props) {
         updatedUser = { ...user, won: user.won + 1, current: user.current + 1, games: user.games + 1, deck: [], inHand: [] }
     }
     else if (alert === 'lost') {
-        updatedUser = { ...user, games: user.games + 1, current:0, deck: [], inHand: [] }
+        updatedUser = { ...user, games: user.games + 1, highScore:Math.max(user.current,user.highScore), current:0, deck: [], inHand: [] }
     }
 
 
